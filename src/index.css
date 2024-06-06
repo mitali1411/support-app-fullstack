@@ -1,0 +1,8 @@
+.navbar{
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+}
+.fa-solid{
+    font-size: 30px;
+}
