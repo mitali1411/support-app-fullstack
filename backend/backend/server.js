@@ -1,5 +1,6 @@
 const express = require('express')
 const colors = require('colors')
+const cors = require('cors')
 const connectDB = require('./config/db_config')
 const errorHandler = require('./middleware/errorHandler')
 require('dotenv').config()
@@ -20,6 +21,10 @@ app.get('/', (req, res) => {
         msg : 'WELCOME TO SUPPORT API 1.0'
     })
 });
+
+
+// Cors
+app.use(cors());
 
 
 // User Routes

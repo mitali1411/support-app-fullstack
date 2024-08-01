@@ -61,6 +61,22 @@ const complaintSlice = createSlice({
             state.isSuccess = true;
             state.complaint = action.payload;
             state.message = ''
+        }).addCase(closeComplaint.pending, (state, action) => {
+            state.isLoading = true;
+            state.isError = false;
+            state.isSuccess = false;
+            state.message = ''
+        }).addCase(closeComplaint.rejected, (state, action) => {
+            state.isLoading = false;
+            state.isError = true;
+            state.isSuccess = false;
+            state.message = action.payload
+        }).addCase(closeComplaint.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.isError = false;
+            state.isSuccess = true;
+            state.complaint = action.payload;
+            state.message = ''
         })
     }
 })
